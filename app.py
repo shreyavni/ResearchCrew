@@ -4,7 +4,7 @@ from agents import build_reader_agent, build_search_agent, writer_chain, critic_
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="ResearchMind · AI Research Agent",
+    page_title="ResearchCrew · AI Research Agent",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -321,7 +321,7 @@ for key in ("results", "running", "done"):
 st.markdown("""
 <div class="hero">
     <div class="hero-eyebrow">Multi-Agent AI System</div>
-    <h1>Research<span>Mind</span></h1>
+    <h1>Research<span>Crew</span></h1>
     <p class="hero-sub">
         Four specialized AI agents collaborate — searching, scraping, writing,
         and critiquing — to deliver a polished research report on any topic.
@@ -418,6 +418,7 @@ if st.session_state.running and not st.session_state.done:
         st.session_state.results = dict(results)
     st.rerun() if False else None   # keep inline for now
 
+
     # ── Step 2: Reader ──
     with st.spinner("📄  Reader Agent is scraping top resources…"):
         reader_agent = build_reader_agent()
@@ -503,6 +504,6 @@ if r:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="notice">
-    ResearchMind · Powered by LangChain multi-agent pipeline · Built with Streamlit
+    ResearchCrew · Powered by LangChain multi-agent pipeline · Built with Streamlit
 </div>
 """, unsafe_allow_html=True)
